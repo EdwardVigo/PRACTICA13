@@ -6,6 +6,7 @@ import com.upao.msmatriculas.infraestructure.repositories.implnosql.MensajeNosql
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,6 +23,13 @@ public class MensajeServiceImpl implements MensajeService {
     @Override
     public List<Mensaje> ListarTodos() {
         return mensajeNosqlRepository.ListarTodos();
+    }
+
+    @Override
+    public List<Mensaje> ListarRemitente(String remitente) {
+        List<Mensaje> resultado=new ArrayList<>();
+        resultado=mensajeNosqlRepository.buscarRemitente(remitente);
+        return resultado;
     }
 
     @Override

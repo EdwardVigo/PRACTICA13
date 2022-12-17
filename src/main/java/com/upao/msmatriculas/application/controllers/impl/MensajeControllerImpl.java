@@ -25,6 +25,16 @@ public class MensajeControllerImpl implements MensajeController {
     }
 
     @Override
+    public boolean Actualizar(Mensaje mensaje) {
+        return mensajeService.Registrar(mensaje);
+    }
+
+    @Override
+    public List<Mensaje> ListarRemitente(String remitente) {
+        return mensajeService.ListarRemitente(remitente);
+    }
+
+    @Override
     public void eliminar(String id) {
         mensajeService.eliminar(id);
     }

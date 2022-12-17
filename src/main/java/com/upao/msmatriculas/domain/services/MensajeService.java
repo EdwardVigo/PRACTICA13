@@ -8,6 +8,8 @@ public interface MensajeService {
     boolean Registrar(Mensaje mensaje);
     List<Mensaje> ListarTodos();
 
+    List<Mensaje> ListarRemitente(String remitente);
+
     void eliminar(String id);
 
 }

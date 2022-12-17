@@ -15,6 +15,12 @@ public interface MensajeController {
     @PostMapping(produces = "application/json", consumes = "application/json")
     boolean Registrar(@RequestBody Mensaje mensaje);
 
+    @PutMapping(produces = "application/json", consumes = "application/json")
+    boolean Actualizar(@RequestBody Mensaje mensaje);
+
+    @GetMapping("/listar")
+    List<Mensaje> ListarRemitente(@RequestParam(name="remitente") String remitente);
+
     @DeleteMapping("/{id}")
     void eliminar(@PathVariable String id);
 
